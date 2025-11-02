@@ -95,7 +95,6 @@ def train_pinn():
     print("Обучение завершено!")
     return model
 
-# 4. Запускаем обучение
 if __name__ == "__main__":
     model = train_pinn()
     
@@ -107,4 +106,5 @@ if __name__ == "__main__":
         prediction = model(x_test, t_test)
     
     print(f"\nТестовое предсказание: u(0.5, 0.5) = {prediction.item():.4f}")
+    print(f"new changes")
     print("done")
