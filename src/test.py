@@ -15,6 +15,7 @@ class PINN(nn.Module):
         
     def forward(self, x, t):
         inputs = torch.cat([x, t], dim=1)
+        print(inputs.shape)
         return self.net(inputs)
 
 
