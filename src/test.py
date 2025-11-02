@@ -92,13 +92,13 @@ def train_pinn():
         if epoch % 100 == 0:
             print(f"Эпоха {epoch}, Потери: {loss.item():.6f}")
     
-    print("Обучение завершено!")
+    # print("Обучение завершено!")
     return model
 
 if __name__ == "__main__":
     model = train_pinn()
     
-    # Тестируем модель
+
     x_test = torch.tensor([[0.5]], dtype=torch.float32)
     t_test = torch.tensor([[0.5]], dtype=torch.float32)
     
@@ -106,5 +106,5 @@ if __name__ == "__main__":
         prediction = model(x_test, t_test)
     
     print(f"\nТестовое предсказание: u(0.5, 0.5) = {prediction.item():.4f}")
-    print(f"new changes")
+    # print(f"new changes")
     print("done")
