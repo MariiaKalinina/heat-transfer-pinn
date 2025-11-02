@@ -34,6 +34,7 @@ def physics_loss(model, x, t, alpha=0.1):
                              create_graph=True, retain_graph=True)[0]
     
     physics = u_t - alpha * u_xx
+    print(physics)
     return torch.mean(physics**2)
 
 def boundary_loss(model):
