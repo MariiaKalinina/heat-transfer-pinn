@@ -4,6 +4,8 @@ from src.lithology_analyzer import LithologyAnalyzer
 from src.visualization import Visualizer
 from src.models import LithologyPredictor
 
+print("check changes")
+
 def main():
     # Загрузка данных
     print("Загрузка данных...")
