@@ -9,6 +9,7 @@ from .config import (
 )
 from .data import make_synthetic, split_per_well, normalize, MultiWellTS
 from .model import GRUWithStatics
+from .model import LSTMWithStatics
 from .train import train_model
 from .evaluate import collect_predictions, metrics, per_well_mae
 from .visualize import (
@@ -42,11 +43,20 @@ def run():
 
     # Model
     device = "cuda" if torch.cuda.is_available() else "cpu"
+    
     model = GRUWithStatics(
         f_dyn=F_DYN, hidden=192, layers=1, dropout=0.1,
         cat_card=cat_card, cat_emb_dim=8, static_cont_dim=len(STATIC_CONT_COLS),
         use_well_emb=USE_WELL_ID_EMB, num_wells=num_wells, well_emb_dim=8, horizon=1
     ).to(device)
+
+    model = LSTMWithStatics(
+        f_dyn=F_DYN, hidden=192, layers=1, dropout=0.1,
+        cat_card=cat_card, cat_emb_dim=8, static_cont_dim=len(STATIC_CONT_COLS),
+        use_well_emb=USE_WELL_ID_EMB, num_wells=num_wells, well_emb_dim=8, horizon=1,
+        bidirectional=False,   # set True to use BiLSTM (head already accounts for 2x hidden)
+    ).to(device)
+
 
     # Train
     train_hist, val_hist = train_model(model, train_loader, val_loader, device=device,
