@@ -43,7 +43,7 @@ def run():
 
     # Model
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    
+
     model = GRUWithStatics(
         f_dyn=F_DYN, hidden=192, layers=1, dropout=0.1,
         cat_card=cat_card, cat_emb_dim=8, static_cont_dim=len(STATIC_CONT_COLS),
@@ -54,7 +54,7 @@ def run():
         f_dyn=F_DYN, hidden=192, layers=1, dropout=0.1,
         cat_card=cat_card, cat_emb_dim=8, static_cont_dim=len(STATIC_CONT_COLS),
         use_well_emb=USE_WELL_ID_EMB, num_wells=num_wells, well_emb_dim=8, horizon=1,
-        bidirectional=False,   # set True to use BiLSTM (head already accounts for 2x hidden)
+        bidirectional=False,  
     ).to(device)
 
 
