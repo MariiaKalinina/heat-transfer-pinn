@@ -12,6 +12,7 @@ from .config import (
 
 # here need to change heatflux
 def heat_flux(beta, t):
+    ab = 10
     a = 125
     tau = 62.8
     lam = 3.5
@@ -145,9 +146,8 @@ class MultiWellTS(Dataset):
                 torch.tensor(wid, dtype=torch.long),
                 torch.tensor(t_val, dtype=torch.float32))
     
-
+### --- Delete the remain lines ---- 
 if __name__ == "__main__":
-    # Generate and display data
     df, well_layers = make_synthetic()
     
     print("=== Synthetic Data Generated ===")
@@ -156,6 +156,7 @@ if __name__ == "__main__":
     print("\nFirst 5 rows:")
     print(df.head())
     # print(df.columns)
+
     plt.scatter(df["time_myr"], df["q"])
     plt.show()
     
