@@ -10,7 +10,7 @@ from .config import (
     TRAIN_FRAC, VAL_FRAC, TARGET_COL, DYN_COLS, STATIC_CONT_COLS, STATIC_CAT_COLS,
 )
 
-# 1) Heat flux function
+# Need to correct 
 def heat_flux(beta, t):
     a = 125
     tau = 62.8
@@ -145,9 +145,8 @@ class MultiWellTS(Dataset):
                 torch.tensor(wid, dtype=torch.long),
                 torch.tensor(t_val, dtype=torch.float32))
     
-
+### --- Delete the remain lines ---- 
 if __name__ == "__main__":
-    # Generate and display data
     df, well_layers = make_synthetic()
     
     print("=== Synthetic Data Generated ===")
