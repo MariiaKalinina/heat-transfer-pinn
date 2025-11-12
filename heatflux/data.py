@@ -1,6 +1,7 @@
 
 from dataclasses import dataclass
 import numpy as np
+import matplotlib.pyplot as plt
 import pandas as pd
 import torch
 from torch.utils.data import Dataset
@@ -143,4 +144,21 @@ class MultiWellTS(Dataset):
                 torch.tensor([scat[c] for c in STATIC_CAT_COLS], dtype=torch.long),
                 torch.tensor(wid, dtype=torch.long),
                 torch.tensor(t_val, dtype=torch.float32))
+    
+
+if __name__ == "__main__":
+    # Generate and display data
+    df, well_layers = make_synthetic()
+    
+    print("=== Synthetic Data Generated ===")
+    print(f"DataFrame shape: {df.shape}")
+    print(f"Wells: {df['well_id'].nunique()}")
+    print("\nFirst 5 rows:")
+    print(df.head())
+    # print(df.columns)
+    plt.scatter(df["time_myr"], df["q"])
+    plt.show()
+    
+    print(f"\nWell layers shape: {well_layers.shape}")
+    print(well_layers.head())
 
