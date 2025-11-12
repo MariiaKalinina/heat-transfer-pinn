@@ -12,6 +12,7 @@ from .config import (
 
 # Need to correct and verify this function
 def heat_flux(beta, t):
+    ab = 10
     a = 125
     tau = 62.8
     lam = 3.5
