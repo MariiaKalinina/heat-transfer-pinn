@@ -10,7 +10,7 @@ from .config import (
     TRAIN_FRAC, VAL_FRAC, TARGET_COL, DYN_COLS, STATIC_CONT_COLS, STATIC_CAT_COLS,
 )
 
-# 1) Heat flux function
+# here need to change heatflux
 def heat_flux(beta, t):
     a = 125
     tau = 62.8
