@@ -10,7 +10,7 @@ from .config import (
     TRAIN_FRAC, VAL_FRAC, TARGET_COL, DYN_COLS, STATIC_CONT_COLS, STATIC_CAT_COLS,
 )
 
-# Need to correct and verify this function
+# here need to change heatflux
 def heat_flux(beta, t):
     ab = 10
     a = 125
@@ -155,11 +155,8 @@ if __name__ == "__main__":
     print(f"Wells: {df['well_id'].nunique()}")
     print("\nFirst 5 rows:")
     print(df.head())
-<<<<<<< HEAD
     # print(df.columns)
-=======
-    print(df.columns)
->>>>>>> bc6f211 (all commits)
+
     plt.scatter(df["time_myr"], df["q"])
     plt.show()
     
