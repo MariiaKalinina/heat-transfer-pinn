@@ -154,7 +154,11 @@ if __name__ == "__main__":
     print(f"Wells: {df['well_id'].nunique()}")
     print("\nFirst 5 rows:")
     print(df.head())
+<<<<<<< HEAD
     # print(df.columns)
+=======
+    print(df.columns)
+>>>>>>> bc6f211 (all commits)
     plt.scatter(df["time_myr"], df["q"])
     plt.show()
     
