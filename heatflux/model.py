@@ -49,7 +49,6 @@ class GRUWithStatics(nn.Module):
         return yhat
     
 
-
 class LSTMWithStatics(nn.Module):
     def __init__(self, f_dyn, hidden=192, layers=1, dropout=0.1,
                  cat_card=None, cat_emb_dim=8, static_cont_dim=2,
@@ -65,7 +64,6 @@ class LSTMWithStatics(nn.Module):
             dropout=dropout if layers > 1 else 0.0,
             bidirectional=bidirectional,
         )
-
         # categorical embeddings (same as GRU)
         self.cat_embs = nn.ModuleDict()
         total_cat_dim = 0
