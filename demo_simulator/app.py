@@ -1028,7 +1028,7 @@ if page == "Входные данные":
             st.dataframe(df_show, use_container_width=True)
 
             # ---- Дополнительные параметры под таблицей ----
-            st.markdown("### Дополнительные параметры (заполняются при необходимости)")
+            st.markdown("### Граничные параметры (заполняются при необходимости)")
 
             with st.expander("SWIT (палеоширотные данные)", expanded=True):
                 c1, c2, c3 = st.columns([1, 1, 1])
@@ -1181,8 +1181,8 @@ if page == "Входные данные":
                 #     "Thermal conductivity", "Heat capacity",
                 # ]),
                 "Компакция": pick_existing([
-                    "Lithology type", "Density", "Porosity",
-                    "Compaction model", "Compressibility model",
+                    "Lithology type", "Density", "Initial porosity",
+                    "Compressibility MAX", "Compressibility MIN"
                 ]),
                 "Теплофизика": pick_existing([
                     "Lithology type", "Thermal conductivity",
